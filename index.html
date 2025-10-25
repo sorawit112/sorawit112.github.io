@@ -1,362 +1,349 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-  <meta charset="utf-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>Sorawit Inprom — Robotics & Automation Engineer</title>
-  <meta name="description" content="Responsive one‑page CV/Portfolio for Sorawit Inprom — Robotics & Automation Engineer (ROS/ROS2, ABB, KUKA)."/>
-  <meta property="og:title" content="Sorawit Inprom — Robotics & Automation Engineer" />
-  <meta property="og:description" content="ROS/ROS2 • Mobile robots • Industrial automation • ABB/KUKA" />
-  <meta property="og:type" content="website" />
-  <meta name="theme-color" content="#0ea5e9" />
-  <style>
-    :root{
-      --bg: #0b0f1a; --card:#0f172a; --ink:#e2e8f0; --muted:#94a3b8; --brand:#0ea5e9; --chip:#1e293b; --ring:rgba(14,165,233,.35);
-      --shadow: 0 10px 30px rgba(2,8,23,.35);
-    }
-    *{box-sizing:border-box}
-    body{margin:0;font-family:Inter,system-ui,Segoe UI,Roboto,Helvetica,Arial,Apple Color Emoji,Segoe UI Emoji;line-height:1.65;background:var(--bg);color:var(--ink)}
-    a{color:var(--brand);text-decoration:none}
-    a:hover{text-decoration:underline}
-    header{position:sticky;top:0;z-index:50;backdrop-filter:saturate(140%) blur(8px);background:linear-gradient( to bottom, rgba(2,6,23,.9), rgba(2,6,23,.6) );border-bottom:1px solid rgba(148,163,184,.15)}
-    .wrap{max-width:1100px;margin:auto;padding:0 20px}
-    .top{display:flex;align-items:center;gap:18px;padding:12px 0}
-    .avatar{width:54px;height:54px;border-radius:14px;background:linear-gradient(135deg,#38bdf8,#3b82f6);display:grid;place-items:center;color:white;font-weight:800;box-shadow:var(--shadow)}
-    .name{font-size:clamp(18px,2.6vw,26px);font-weight:800;letter-spacing:.2px}
-    .role{color:var(--muted);font-weight:500}
-    .nav{display:flex;flex-wrap:wrap;gap:10px;margin:10px 0 14px}
-    .nav a{padding:8px 12px;border-radius:999px;background:var(--chip);border:1px solid rgba(148,163,184,.2)}
-    .grid{display:grid;grid-template-columns: 260px 1fr;gap:22px;margin:24px 0}
-    @media (max-width:900px){.grid{grid-template-columns:1fr}}
-    .card{background:var(--card);border:1px solid rgba(148,163,184,.2);border-radius:18px;padding:18px;box-shadow:var(--shadow)}
-    h2{margin:0 0 8px;font-size:clamp(18px,2.4vw,22px)}
-    h3{margin:18px 0 8px;font-size:18px}
-    .muted{color:var(--muted)}
-    .chips{display:flex;flex-wrap:wrap;gap:8px}
-    .chip{background:var(--chip);border:1px solid rgba(148,163,184,.25);padding:6px 10px;border-radius:999px;font-size:12px}
-    .list{display:grid;gap:12px}
-    .item{border:1px solid rgba(148,163,184,.2);border-radius:14px;padding:14px;background:rgba(15,23,42,.7)}
-    .item header{position:unset;background:none;border:none;padding:0}
-    .row{display:flex;flex-wrap:wrap;gap:10px;align-items:center;justify-content:space-between}
-    .when{font-size:12px;color:var(--muted)}
-    .loc{font-size:12px;color:var(--muted)}
-    .bullets{margin:8px 0 0 18px}
-    .bullets li{margin:6px 0}
-    .toolbar{display:flex;gap:10px;align-items:center}
-    input[type="search"]{flex:1;min-width:140px;background:var(--card);border:1px solid rgba(148,163,184,.35);color:var(--ink);padding:10px 12px;border-radius:12px;outline:none}
-    .btn{display:inline-flex;gap:8px;align-items:center;padding:10px 12px;border-radius:12px;border:1px solid rgba(148,163,184,.35);background:#0b1220;color:var(--ink);cursor:pointer}
-    .btn:hover{border-color:var(--brand);box-shadow:0 0 0 3px var(--ring)}
-    .two{display:grid;gap:18px}
-    @media (min-width:901px){.two{grid-template-columns:1fr 1fr}}
-    details{border:1px solid rgba(148,163,184,.25);border-radius:12px}
-    summary{list-style:none;padding:12px 14px;cursor:pointer}
-    summary::-webkit-details-marker{display:none}
-    details[open]{box-shadow:0 0 0 3px var(--ring)}
-    footer{margin:36px 0 48px;color:var(--muted);text-align:center}
-    .contact a{display:inline-flex;align-items:center;gap:8px;border:1px solid rgba(148,163,184,.35);padding:8px 12px;border-radius:12px;background:#091021}
-    .contact{display:flex;flex-wrap:wrap;gap:10px}
-    .kbd{font:600 11px ui-monospace,SFMono-Regular,Menlo,Monaco,Consolas; background:#0b1220;border:1px solid rgba(148,163,184,.35);padding:2px 6px;border-radius:6px}
-    @media print{
-      header,.toolbar,.nav,footer{display:none}
-      body{background:white;color:#111}
-      .card,.item{border-color:#ddd;box-shadow:none}
-    }
-  </style>
-</head>
-<body>
-  <header>
-    <div class="wrap">
-      <div class="top">
-        <div class="avatar" aria-hidden="true">SI</div>
-        <div>
-          <div class="name">Sorawit Inprom</div>
-          <div class="role">Robotics & Automation Engineer · ROS/ROS2 · ABB · KUKA</div>
-        </div>
-      </div>
-      <nav class="nav" aria-label="Sections">
-        <a href="#about">About</a>
-        <a href="#experience">Experience</a>
-        <a href="#projects">Projects</a>
-        <a href="#education">Education</a>
-        <a href="#skills">Skills</a>
-        <a href="#awards">Awards</a>
-        <a href="#training">Training</a>
-      </nav>
-    </div>
-  </header>
-
-  <main class="wrap grid">
-    <!-- Sidebar -->
-    <aside class="card" aria-label="Contact">
-      <h2>Contact</h2>
-      <p class="muted">Bangkok, Thailand</p>
-      <div class="contact" style="margin:10px 0 14px">
-        <a href="tel:+66911130549" aria-label="Call Sorawit">📞 <span>+66 91 113 0549</span></a>
-        <a href="mailto:sorawit.inp@gmail.com" aria-label="Email Sorawit">✉️ <span>mailto</span></a>
-      </div>
-      <div class="chips" style="margin-top:6px">
-        <span class="chip">DOB: 1997‑11‑27</span>
-        <a class="chip" href="https://github.com/sorawit112" target="_blank" rel="noopener">GitHub</a>
-        <a class="chip" href="#" onclick="window.print();return false;">Print</a>
-      </div>
-      <hr style="border-color:rgba(148,163,184,.2);margin:16px 0">
-      <h2>Quick Find</h2>
-      <div class="toolbar">
-        <input id="q" type="search" placeholder="Type to filter… (e.g., ABB, ROS2)" aria-label="Filter content" />
-        <button class="btn" id="toggleDark" type="button" aria-pressed="false">🌗 Theme</button>
-      </div>
-      <p class="muted" style="margin-top:10px">Use <span class="kbd">/</span> to focus search. Results highlight in real time.</p>
-    </aside>
-
-    <!-- Content -->
-    <section class="two">
-      <article id="about" class="card">
-        <h2>About</h2>
-        <p class="searchable">Robotics & Automation engineer with 6+ years across mobile robots and industrial manipulators. Experienced in ROS → ROS2 migrations, navigation/localization, behavior trees, and deploying ABB/KUKA cells that transform manual lines into autonomous production.</p>
-      </article>
-
-      <article id="experience" class="card">
-        <h2>Professional Experience</h2>
-        <div class="list">
-          <div class="item searchable">
-            <div class="row">
-              <strong>Robotics & AI Software Developer — Obodroid Corporation</strong>
-              <span class="when">Jul 2021 – Present · Bangkok</span>
+<!doctype html>
+<html lang="en" style="scroll-behavior: smooth">
+    <head>
+        <meta charset="utf-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1" />
+        <title>Sorawit Inprom — Robotics & Automation Engineer</title>
+        <meta
+            name="description"
+            content="Responsive one-page CV/Portfolio for Sorawit Inprom — Robotics & Automation Engineer (ROS/ROS2, ABB, KUKA)."
+        />
+        <meta
+            property="og:title"
+            content="Sorawit Inprom — Robotics & Automation Engineer"
+        />
+        <meta
+            property="og:description"
+            content="ROS/ROS2 • Mobile robots • Industrial automation • ABB/KUKA"
+        />
+        <meta property="og:type" content="website" />
+        <link rel="preconnect" href="https://fonts.googleapis.com" />
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+        <link
+            href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;700&display=swap"
+            rel="stylesheet"
+        />
+        <style>
+            :root {
+                --bg-color: #f3f4f6;
+                --card-bg-color: #ffffff;
+                --text-color: #1f2937;
+                --heading-color: #111827;
+                --muted-color: #6b7280;
+                --accent-color: #3b82f6;
+                --border-color: #e5e7eb;
+            }
+            body {
+                margin: 0;
+                font-family: "Inter", sans-serif;
+                background-color: var(--bg-color);
+                color: var(--text-color);
+                line-height: 1.6;
+            }
+            .container {
+                max-width: 1200px;
+                margin: 0 auto;
+                padding: 0 2rem;
+            }
+            header {
+                position: sticky;
+                top: 0;
+                z-index: 10;
+                background-color: rgba(255, 255, 255, 0.8);
+                backdrop-filter: blur(10px);
+                border-bottom: 1px solid var(--border-color);
+                padding: 1rem 0;
+            }
+            .header-content {
+                display: flex;
+                justify-content: space-between;
+                align-items: center;
+            }
+            .header-content h1 {
+                font-size: 1.5rem;
+                font-weight: 700;
+                color: var(--heading-color);
+                margin: 0;
+            }
+            .header-content p {
+                margin: 0;
+                color: var(--muted-color);
+            }
+            nav a {
+                color: var(--text-color);
+                text-decoration: none;
+                margin-left: 1.5rem;
+                font-weight: 500;
+                transition: color 0.3s;
+            }
+            nav a:hover {
+                color: var(--accent-color);
+            }
+            main {
+                padding: 2rem 0;
+            }
+            .grid-layout {
+                display: grid;
+                grid-template-columns: 1fr;
+                gap: 2rem;
+            }
+            @media (min-width: 768px) {
+                .grid-layout {
+                    grid-template-columns: 300px 1fr;
+                }
+            }
+            .card {
+                background-color: var(--card-bg-color);
+                border-radius: 0.75rem;
+                padding: 1.5rem;
+                box-shadow:
+                    0 4px 6px -1px rgba(0, 0, 0, 0.1),
+                    0 2px 4px -1px rgba(0, 0, 0, 0.06);
+            }
+            .card h2 {
+                font-size: 1.25rem;
+                font-weight: 700;
+                color: var(--heading-color);
+                margin-top: 0;
+                border-bottom: 1px solid var(--border-color);
+                padding-bottom: 0.75rem;
+                margin-bottom: 1rem;
+            }
+            .contact-info a {
+                display: block;
+                margin-bottom: 0.5rem;
+                color: var(--text-color);
+                text-decoration: none;
+            }
+            .contact-info a:hover {
+                color: var(--accent-color);
+            }
+            .skills-grid {
+                display: grid;
+                grid-template-columns: repeat(auto-fill, minmax(100px, 1fr));
+                gap: 0.5rem;
+            }
+            .skill-chip {
+                background-color: var(--bg-color);
+                padding: 0.25rem 0.75rem;
+                border-radius: 9999px;
+                font-size: 0.875rem;
+                text-align: center;
+            }
+            .experience-item,
+            .project-item,
+            .education-item {
+                margin-bottom: 1.5rem;
+            }
+            .experience-item:last-child,
+            .project-item:last-child,
+            .education-item:last-child {
+                margin-bottom: 0;
+            }
+            .item-header {
+                display: flex;
+                justify-content: space-between;
+                align-items: baseline;
+            }
+            .item-header h3 {
+                font-size: 1.125rem;
+                font-weight: 700;
+                margin: 0;
+            }
+            .item-header span {
+                font-size: 0.875rem;
+                color: var(--muted-color);
+            }
+            .item-subtitle {
+                font-weight: 500;
+                color: var(--muted-color);
+                margin-bottom: 0.5rem;
+            }
+            .item-bullets {
+                list-style-position: inside;
+                padding-left: 0;
+            }
+            footer {
+                text-align: center;
+                padding: 2rem 0;
+                color: var(--muted-color);
+                font-size: 0.875rem;
+            }
+        </style>
+    </head>
+    <body>
+        <header>
+            <div class="container header-content">
+                <div>
+                    <h1>Sorawit Inprom</h1>
+                    <p>Robotics & Automation Engineer</p>
+                </div>
+                <nav>
+                    <a href="#about">About</a>
+                    <a href="#experience">Experience</a>
+                    <a href="#projects">Projects</a>
+                    <a href="#skills">Skills</a>
+                </nav>
             </div>
-            <ul class="bullets">
-              <li>Lead software for mobile robots (SR1, Alpaca, COF, SWC): localization, navigation, path planning (ROS/ROS2).</li>
-              <li>Built base drivers for differential & ackermann kinematics; developed simulation environments.</li>
-              <li>Migrated the stack from ROS1→ROS2; collaborated with CN partners; cross‑platform deployments.</li>
-              <li>Led palletizing automation using KUKA & ABB manipulators.</li>
-            </ul>
-          </div>
-          <div class="item searchable">
-            <div class="row">
-              <strong>System Integration & R&D Consultant — Freelance</strong>
-              <span class="when">Jul 2021 – Feb 2023 · Bangkok</span>
+        </header>
+
+        <main class="container">
+            <div class="grid-layout">
+                <aside>
+                    <div class="card">
+                        <h2>Contact</h2>
+                        <div class="contact-info">
+                            <p>Bangkok, Thailand</p>
+                            <a href="tel:+66911130549">+66 91 113 0549</a>
+                            <a href="mailto:sorawit.inp@gmail.com"
+                                >sorawit.inp@gmail.com</a
+                            >
+                            <a
+                                href="https://github.com/sorawit112"
+                                target="_blank"
+                                rel="noopener"
+                                >GitHub</a
+                            >
+                        </div>
+                    </div>
+                </aside>
+                <section>
+                    <div id="about" class="card">
+                        <h2>About</h2>
+                        <p>
+                            Robotics & Automation engineer with 6+ years across
+                            mobile robots and industrial manipulators.
+                            Experienced in ROS → ROS2 migrations,
+                            navigation/localization, behavior trees, and
+                            deploying ABB/KUKA cells that transform manual lines
+                            into autonomous production.
+                        </p>
+                    </div>
+
+                    <div id="experience" class="card" style="margin-top: 2rem">
+                        <h2>Experience</h2>
+                        <div class="experience-item">
+                            <div class="item-header">
+                                <h3>Robotics & AI Software Developer</h3>
+                                <span>Jul 2021 – Present</span>
+                            </div>
+                            <p class="item-subtitle">
+                                Obodroid Corporation, Bangkok
+                            </p>
+                            <ul class="item-bullets">
+                                <li>
+                                    Lead software for mobile robots (SR1,
+                                    Alpaca, COF, SWC): localization, navigation,
+                                    path planning (ROS/ROS2).
+                                </li>
+                                <li>
+                                    Built base drivers for differential &
+                                    ackermann kinematics; developed simulation
+                                    environments.
+                                </li>
+                                <li>
+                                    Migrated the stack from ROS1→ROS2;
+                                    collaborated with CN partners;
+                                    cross‑platform deployments.
+                                </li>
+                                <li>
+                                    Led palletizing automation using KUKA & ABB
+                                    manipulators.
+                                </li>
+                            </ul>
+                        </div>
+                        <div class="experience-item">
+                            <div class="item-header">
+                                <h3>System Integration & R&D Consultant</h3>
+                                <span>Jul 2021 – Feb 2023</span>
+                            </div>
+                            <p class="item-subtitle">Freelance, Bangkok</p>
+                            <ul class="item-bullets">
+                                <li>
+                                    Integrated KUKA systems; designed
+                                    multi‑robot delivery; optimized manipulator
+                                    energy consumption.
+                                </li>
+                                <li>
+                                    Built ROS simulations for parameter tuning.
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+
+                    <div id="projects" class="card" style="margin-top: 2rem">
+                        <h2>Selected Projects</h2>
+                        <div class="project-item">
+                            <div class="item-header">
+                                <h3>CP-Meiji Depalletizing Robot</h3>
+                                <span>Apr 2025 – Present</span>
+                            </div>
+                            <p>
+                                Automated depalletizing for box unpacking & line
+                                feeding (ABB manipulator + Mitsubishi PLC).
+                                Industrial transformation: 6 operators → 2.
+                            </p>
+                        </div>
+                        <div class="project-item">
+                            <div class="item-header">
+                                <h3>Ajinomoto Autonomous Vibration System</h3>
+                                <span>Nov 2024 – Jan 2025</span>
+                            </div>
+                            <p>
+                                Depalletize sacks → vibration table → palletize
+                                back; KUKA manipulator + Omron PLC. Operators
+                                reduced 6 → 1.
+                            </p>
+                        </div>
+                    </div>
+
+                    <div id="education" class="card" style="margin-top: 2rem">
+                        <h2>Education</h2>
+                        <div class="education-item">
+                            <div class="item-header">
+                                <h3>B.Eng., Robotics & Automation</h3>
+                                <span>2015 – 2019</span>
+                            </div>
+                            <p class="item-subtitle">
+                                King Mongkut’s University of Technology Thonburi
+                                (First-Class Honours, GPA 3.91)
+                            </p>
+                        </div>
+                    </div>
+
+                    <div id="skills" class="card" style="margin-top: 2rem">
+                        <h2>Skills</h2>
+                        <h3>Robotics</h3>
+                        <div class="skills-grid">
+                            <div class="skill-chip">ROS / ROS2</div>
+                            <div class="skill-chip">Navigation</div>
+                            <div class="skill-chip">ABB RAPID</div>
+                            <div class="skill-chip">KUKA KRL</div>
+                        </div>
+                        <h3 style="margin-top: 1.5rem">Programming & Tools</h3>
+                        <div class="skills-grid">
+                            <div class="skill-chip">C/C++</div>
+                            <div class="skill-chip">Python</div>
+                            <div class="skill-chip">Rust</div>
+                            <div class="skill-chip">MATLAB</div>
+                        </div>
+                    </div>
+                </section>
             </div>
-            <ul class="bullets">
-              <li>Integrated KUKA systems; designed multi‑robot delivery; optimized manipulator energy consumption.</li>
-              <li>Built ROS simulations for parameter tuning.</li>
-            </ul>
-          </div>
-          <div class="item searchable">
-            <div class="row">
-              <strong>Automation Engineer — Asahi‑Thai Alloy</strong>
-              <span class="when">May 2019 – Jul 2021 · Samut Prakan</span>
+        </main>
+
+        <footer>
+            <div class="container">
+                <p>
+                    © <span id="year"></span> Sorawit Inprom. All rights
+                    reserved.
+                </p>
             </div>
-            <ul class="bullets">
-              <li>Deployed SCARA & KUKA robots for faucet production; vision‑guided laser marking & stamping.</li>
-              <li>Improved cycle time & accuracy via smart automation.</li>
-            </ul>
-          </div>
-          <div class="item searchable">
-            <div class="row">
-              <strong>Backend Developer (Part‑time, R&D) — CoXSys Robotics</strong>
-              <span class="when">May – Aug 2020 · Bangkok</span>
-            </div>
-            <ul class="bullets">
-              <li>Centralized & decentralized control for multi‑agent robots; coverage path planning for UVC robots.</li>
-            </ul>
-          </div>
-        </div>
-      </article>
+        </footer>
 
-      <article id="projects" class="card">
-        <h2>Selected Projects</h2>
-        <details class="searchable" open>
-          <summary><strong>CP‑Meiji Depalletizing Robot</strong> — <span class="muted">Apr 2025 – Present</span></summary>
-          <ul class="bullets">
-            <li>Automated depalletizing for box unpacking & line feeding (ABB manipulator + Mitsubishi PLC).</li>
-            <li>Industrial transformation: 6 operators → 2.</li>
-          </ul>
-        </details>
-        <details class="searchable">
-          <summary><strong>Ajinomoto Autonomous Vibration System</strong> — <span class="muted">Nov 2024 – Jan 2025</span></summary>
-          <ul class="bullets">
-            <li>Depalletize sacks → vibration table → palletize back; KUKA manipulator + Omron PLC.</li>
-            <li>Operators reduced 6 → 1.</li>
-          </ul>
-        </details>
-        <details class="searchable">
-          <summary><strong>Obodroid Mobile Robot Stack</strong> — <span class="muted">Jul 2021 – Present</span></summary>
-          <ul class="bullets">
-            <li>Navigation, localization, obstacle avoidance, path travel, behavior trees; ROS1→ROS2 migration.</li>
-            <li>Base drivers (differential & ackermann) + simulation toolchains.</li>
-          </ul>
-        </details>
-        <details class="searchable">
-          <summary><strong>Manipulator Energy Optimization</strong> — <span class="muted">Sep – Dec 2022</span></summary>
-          <ul class="bullets">
-            <li>Optimized velocity/acceleration to reduce energy via ROS‑based simulation & search.</li>
-          </ul>
-        </details>
-        <details class="searchable">
-          <summary><strong>Multi‑Robot Picking Delivery</strong> — <span class="muted">Feb – Apr 2022</span></summary>
-          <ul class="bullets">
-            <li>Designed multi‑agent mobile robots for picking/delivery.
-              <a href="https://docs.google.com/presentation/d/1_FrjdiZaFcxaP-gS3wsgTpCNxe-XSMi7IDWDBrz0da8/edit#slide=id.p" target="_blank" rel="noopener">Slides</a> ·
-              <a href="https://github.com/sorawit112/mobile_robot_ws" target="_blank" rel="noopener">Code</a>
-            </li>
-          </ul>
-        </details>
-        <details class="searchable">
-          <summary><strong>Autonomous Trimming for Faucets</strong> (KUKA) — <span class="muted">Aug 2020 – Jul 2021</span></summary>
-          <ul class="bullets"><li>Cognex vision for type classification & pose; conveyor‑sync pick‑place into trimming machine.</li></ul>
-        </details>
-        <details class="searchable">
-          <summary><strong>SCARA Faucet Machining</strong> — <span class="muted">Sep 2020 – Jul 2021</span></summary>
-          <ul class="bullets"><li>Yamaha SCARA with custom turntable; end‑to‑end autonomous pick & place.</li></ul>
-        </details>
-        <details class="searchable">
-          <summary><strong>Autonomous Multi‑Floor Robot</strong> — <span class="muted">Aug 2018 – May 2019</span></summary>
-          <ul class="bullets"><li>Differential‑drive robot + 5‑DOF elevator manipulator; ROS‑based embedded control.</li></ul>
-        </details>
-        <details class="searchable">
-          <summary><strong>Quadrotor Tail‑Sitter Controls</strong> — <span class="muted">Aug – Dec 2018</span></summary>
-          <ul class="bullets"><li>Model‑based design in MATLAB/Simulink; altitude & attitude control.</li></ul>
-        </details>
-      </article>
-
-      <article id="education" class="card">
-        <h2>Education & Research</h2>
-        <div class="list">
-          <div class="item searchable">
-            <div class="row"><strong>B.Eng., Robotics & Automation (First‑Class Honours, GPA 3.91)</strong><span class="when">2015 – 2019</span></div>
-            <div class="loc">King Mongkut’s University of Technology Thonburi — Institute of Field Robotics</div>
-            <ul class="bullets"><li>Senior Project: Autonomous Multi‑Floor Robot Navigation</li></ul>
-          </div>
-          <div class="item searchable">
-            <div class="row"><strong>Research & International Exposure</strong></div>
-            <ul class="bullets">
-              <li>World Congress on Undergraduate Research, Oldenburg, Germany (May 2019).</li>
-              <li>Teaching/RA — Intro to Robotics, Control Theory, Python (2017–2019).</li>
-              <li>Toyota Tsusho Automotive Embedded & Self‑Driving competition (Oct 2017).</li>
-            </ul>
-          </div>
-          <div class="item searchable">
-            <div class="row"><strong>Internships</strong></div>
-            <ul class="bullets">
-              <li>Shizuoka University (JP): IPM motor analysis/design for Prius hybrid (Jun–Jul 2018).</li>
-              <li>Asahi‑Thai Alloy: 2‑axis cartesian robot with PLC (Jun–Jul 2017).</li>
-            </ul>
-          </div>
-        </div>
-      </article>
-
-      <article id="skills" class="card">
-        <h2>Skills</h2>
-        <h3>Robotics</h3>
-        <div class="chips searchable">
-          <span class="chip">ROS / ROS2</span>
-          <span class="chip">Navigation & Localization</span>
-          <span class="chip">Behavior Trees</span>
-          <span class="chip">ABB RAPID</span>
-          <span class="chip">KUKA KRL</span>
-          <span class="chip">Gazebo / Isaac Sim / Unity</span>
-          <span class="chip">Cognex / RealSense / Mechmind</span>
-          <span class="chip">Intel NUC / Xavier AGX / Khadas</span>
-        </div>
-        <h3>Programming & Tools</h3>
-        <div class="chips searchable">
-          <span class="chip">C / C++ / Python / Rust</span>
-          <span class="chip">MATLAB / Simulink</span>
-          <span class="chip">PLC (Ladder)</span>
-          <span class="chip">SolidWorks / AutoCAD / Blender</span>
-          <span class="chip">Ubuntu / Linux</span>
-        </div>
-        <h3>Soft & Language</h3>
-        <div class="chips searchable">
-          <span class="chip">Team Leadership</span>
-          <span class="chip">R&D Collaboration</span>
-          <span class="chip">Project Management</span>
-          <span class="chip">Thai (Native)</span>
-          <span class="chip">English (Intermediate)</span>
-        </div>
-      </article>
-
-      <article id="awards" class="card">
-        <h2>Awards & Honors</h2>
-        <ul class="bullets searchable">
-          <li>Best GPA (3x), Silver & Bronze Medals; 2nd WorldCUR participant (2018–2019).</li>
-          <li>Silver Medal & recognition for top GPA thrice (Sep 2019).</li>
-          <li>Top 5 academic performance across early semesters.</li>
-        </ul>
-      </article>
-
-      <article id="training" class="card">
-        <h2>Training</h2>
-        <div class="chips searchable">
-          <span class="chip">Digital Content (May 2023)</span>
-          <span class="chip">Intro to ROS2 (Jan 2023)</span>
-          <span class="chip">KUKA Programming (Oct 2020)</span>
-          <span class="chip">Toyota Production System (Jan 2020)</span>
-          <span class="chip">Mitsubishi PLC (Nov 2019)</span>
-          <span class="chip">System Integrator (Nov 2019)</span>
-          <span class="chip">Machine Vision (Feb 2017)</span>
-          <span class="chip">Researcher Camp (May 2016)</span>
-          <span class="chip">Delta Industrial Automation (Oct 2015)</span>
-        </div>
-      </article>
-    </section>
-  </main>
-
-  <footer>
-    <div class="wrap">© <span id="y"></span> Sorawit Inprom • Built with vanilla HTML/CSS/JS • Fully client‑side</div>
-  </footer>
-
-  <script>
-    // Accessibility: quick focus via '/'
-    const q = document.getElementById('q');
-    window.addEventListener('keydown', (e)=>{ if(e.key==='/' && document.activeElement!==q){ e.preventDefault(); q.focus(); }});
-
-    // Live filter for elements with .searchable
-    const searchable = Array.from(document.querySelectorAll('.searchable'));
-    const navLinks = Array.from(document.querySelectorAll('nav a'));
-    function filter(){
-      const term = q.value.trim().toLowerCase();
-      let matchCount = 0;
-      searchable.forEach(el=>{
-        const visible = el.textContent.toLowerCase().includes(term);
-        el.closest('.item, details, .card, .chips, ul, article')?.classList.toggle('dim', !visible && term.length>0);
-        if(visible) matchCount++;
-      });
-      // Light scroll to first match
-      if(term && matchCount){ document.querySelector('.dim ~ *:not(.dim)')?.scrollIntoView({behavior:'smooth',block:'center'}); }
-    }
-    q.addEventListener('input', filter);
-
-    // Theme toggle (persists)
-    const btn = document.getElementById('toggleDark');
-    const apply = (mode)=>{
-      document.documentElement.style.setProperty('--bg', mode==='light' ? '#ffffff' : '#0b0f1a');
-      document.documentElement.style.setProperty('--card', mode==='light' ? '#f8fafc' : '#0f172a');
-      document.documentElement.style.setProperty('--ink', mode==='light' ? '#0b1220' : '#e2e8f0');
-      document.documentElement.style.setProperty('--muted', mode==='light' ? '#475569' : '#94a3b8');
-      localStorage.setItem('mode', mode);
-    };
-    const mode = localStorage.getItem('mode') || (window.matchMedia('(prefers-color-scheme: light)').matches ? 'light':'dark');
-    apply(mode);
-    btn.setAttribute('aria-pressed', mode==='dark' ? 'false':'true');
-    btn.addEventListener('click', ()=>{ const m = (localStorage.getItem('mode')||'dark')==='dark'?'light':'dark'; apply(m); btn.setAttribute('aria-pressed', m==='dark' ? 'false':'true'); });
-
-    // Year
-    document.getElementById('y').textContent = new Date().getFullYear();
-  </script>
-
-  <script type="application/ld+json">
-  {
-    "@context":"https://schema.org",
-    "@type":"Person",
-    "name":"Sorawit Inprom",
-    "jobTitle":"Robotics & Automation Engineer",
-    "address":{"@type":"PostalAddress","addressLocality":"Bangkok","addressCountry":"TH"},
-    "email":"mailto:sorawit.inp@gmail.com",
-    "telephone":"+66911130549",
-    "url":"https://sorawit112.github.io/",
-    "knowsAbout":["ROS","ROS2","ABB","KUKA","Mobile Robots","Automation","Cognex","Simulink"],
-    "alumniOf":{"@type":"CollegeOrUniversity","name":"King Mongkut’s University of Technology Thonburi"}
-  }
-  </script>
-</body>
+        <script>
+            document.getElementById("year").textContent =
+                new Date().getFullYear();
+        </script>
+    </body>
 </html>
