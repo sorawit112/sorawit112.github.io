@@ -9,7 +9,7 @@ use leptos_router::{
 #[component]
 pub fn App() -> impl IntoView {
     view! {
-        <Stylesheet id="leptos" href="/style/output.css"/>
+        <link data-trunk href="./style/output.css" rel="css" />
         <Router>
             <Routes fallback=|| "Page not found.">
                 <Route path=StaticSegment("") view=Home/>
