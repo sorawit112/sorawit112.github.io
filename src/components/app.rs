@@ -1,6 +1,6 @@
 use crate::components::*;
 use leptos::prelude::*;
-use leptos_meta::*;
+// use leptos_meta::*;
 use leptos_router::{
     StaticSegment,
     components::{Route, Router, Routes},
