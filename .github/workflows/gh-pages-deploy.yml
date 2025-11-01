@@ -8,6 +8,11 @@ on:
 jobs:
   build-and-deploy:
     runs-on: ubuntu-latest
+
+    permissions:
+      contents: write # Allows reading/writing repository files (crucial for peaceiris/actions-gh-pages).
+      pages: write # Explicitly grants permission to deploy via GitHub Pages.
+
     steps:
       - uses: actions/checkout@v3
 
