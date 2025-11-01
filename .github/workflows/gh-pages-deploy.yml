@@ -24,11 +24,26 @@ jobs:
 
       - name: Build with Trunk
         working-directory: my_pages # Navigate into the project folder
-        run: trunk build --release
+        run: ./trunk build --release --public-url "${GITHUB_REPOSITORY#*/}"
 
-      - name: Deploy to GitHub Pages
-        uses: peaceiris/actions-gh-pages@v3
+      # - name: Deploy to GitHub Pages
+      #   uses: peaceiris/actions-gh-pages@v3
+      #   with:
+      #     github_token: ${{ secrets.GITHUB_TOKEN }}
+      #     # The dist folder is now inside the my_pages folder
+      #     publish_dir: ./my_pages/dist
+
+      - name: Setup Pages
+        uses: actions/configure-pages@v4
         with:
-          github_token: ${{ secrets.GITHUB_TOKEN }}
-          # The dist folder is now inside the my_pages folder
-          publish_dir: ./my_pages/dist
+          enablement: true
+
+      - name: Upload artifact
+        uses: actions/upload-pages-artifact@v2
+        with:
+          # Upload dist dir
+          path: "./my_pages/dist"
+
+      - name: Deploy to GitHub Pages 🚀
+        id: deployment
+        uses: actions/deploy-pages@v3
