@@ -30,7 +30,7 @@ jobs:
 
       - name: Build with Trunk
         working-directory: my_pages # Navigate into the project folder
-        run: ./trunk build --release --public-url "${GITHUB_REPOSITORY#*/}"
+        run: trunk build --release --public-url "${GITHUB_REPOSITORY#*/}"
 
       # - name: Deploy to GitHub Pages
       #   uses: peaceiris/actions-gh-pages@v3
