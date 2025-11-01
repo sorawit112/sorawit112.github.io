@@ -25,19 +25,17 @@ jobs:
       - name: Add Wasm Target
         run: rustup target add wasm32-unknown-unknown
 
+      - name: lint
+        run: cargo clippy & cargo fmt
+
+      - name: Download and install tailwindcss binary
+        run: npm install -D tailwindcss @tailwindcss/cli && npx @tailwindcss/cli -i ./style/input.css -o ./style/output.css
+
       - name: Install Trunk
         run: cargo install --locked trunk
 
       - name: Build with Trunk
-        working-directory: my_pages # Navigate into the project folder
-        run: trunk build --release --public-url "${GITHUB_REPOSITORY#*/}"
-
-      # - name: Deploy to GitHub Pages
-      #   uses: peaceiris/actions-gh-pages@v3
-      #   with:
-      #     github_token: ${{ secrets.GITHUB_TOKEN }}
-      #     # The dist folder is now inside the my_pages folder
-      #     publish_dir: ./my_pages/dist
+        run: trunk build --release
 
       - name: Setup Pages
         uses: actions/configure-pages@v5
@@ -48,7 +46,7 @@ jobs:
         uses: actions/upload-pages-artifact@v4
         with:
           # Upload dist dir
-          path: "./my_pages/dist"
+          path: "./dist"
 
       - name: Deploy to GitHub Pages 🚀
         id: deployment
