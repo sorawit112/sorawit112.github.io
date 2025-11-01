@@ -1,9 +1,10 @@
+# Deploy a Leptos CSR app to GitHub Pages
 name: Deploy Leptos CSR to GitHub Pages
 
 on:
   push:
     branches:
-      - master # Or your deployment branch
+      - master # Or 'main'
 
 jobs:
   build-and-deploy:
@@ -11,41 +12,71 @@ jobs:
 
     environment:
       name: github-pages
-      url: ${{steps.deployment.outputs.page_url}}
+      url: ${{ steps.deployment.outputs.page_url }}
 
+    # Use 'read' for contents, as we are not pushing to a gh-pages branch.
+    # 'pages' and 'id-token' are required for the deploy-pages action.
     permissions:
-      contents: write # Allows reading/writing repository files (crucial for peaceiris/actions-gh-pages).
-      pages: write # Explicitly grants permission to deploy via GitHub Pages.
+      contents: read
+      pages: write
       id-token: write
 
     steps:
-      - name: checkout
-        uses: actions/checkout@v5
+      - name: Checkout 🛎️
+        uses: actions/checkout@v4
 
-      - name: Add Wasm Target
+      - name: Add Wasm Target 🦀
         run: rustup target add wasm32-unknown-unknown
 
-      - name: lint
-        run: cargo clippy & cargo fmt
+      # Cache Rust dependencies
+      - name: Cache Rust dependencies 📦
+        uses: Swatinem/rust-cache@v2
 
-      - name: Download and install tailwindcss binary
-        run: npm install -D tailwindcss @tailwindcss/cli && npx @tailwindcss/cli -i ./style/input.css -o ./style/output.css
+      - name: Lint 📝
+        run: cargo clippy -- -D warnings && cargo fmt -- --check
 
-      - name: Install Trunk
+      # Setup Node.js and cache npm packages
+      - name: Setup Node.js 🟩
+        uses: actions/setup-node@v4
+        with:
+          node-version: "20" # Specify a Node version
+          cache: "npm" # Enable npm caching
+
+      - name: Install Tailwind CSS 💨
+        run: npm install -D tailwindcss
+
+      - name: Run Tailwind CSS 🏃
+        run: npx tailwindcss -i ./style/input.css -o ./style/output.css
+
+      # Cache the Trunk binary itself
+      - name: Cache Trunk binary ⚡
+        id: cache-trunk
+        uses: actions/cache@v4
+        with:
+          path: ~/.cargo/bin/trunk
+          key: ${{ runner.os }}-trunk
+
+      - name: Install Trunk (if not cached) ⚡
+        if: steps.cache-trunk.outputs.cache-hit != 'true'
         run: cargo install --locked trunk
 
-      - name: Build with Trunk
-        run: trunk build --release
+      # CRITICAL: Get the repo name to set the public URL
+      # This is needed for assets to load correctly on GitHub Pages
+      - name: Get repository name 🏷️
+        run: echo "REPO_NAME=$(echo '${{ github.repository }}' | cut -d'/' -f2)" >> $GITHUB_ENV
 
-      - name: Setup Pages
-        uses: actions/configure-pages@v5
-        with:
-          enablement: true
+      - name: Build with Trunk 🛠️
+        # Use --public-url to prefix all asset paths with the repo name
+        run: trunk build --release --public-url /${{ env.REPO_NAME }}/
 
-      - name: Upload artifact
+      # This step is redundant for this workflow.
+      # - name: Setup Pages
+      #   uses: actions/configure-pages@v5
+
+      - name: Upload artifact ⬆️
         uses: actions/upload-pages-artifact@v4
         with:
-          # Upload dist dir
+          # Upload dist dir (Trunk's default output)
           path: "./dist"
 
       - name: Deploy to GitHub Pages 🚀

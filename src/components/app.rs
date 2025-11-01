@@ -2,8 +2,8 @@ use crate::components::*;
 use leptos::prelude::*;
 use leptos_meta::*;
 use leptos_router::{
-    components::{Route, Router, Routes},
     StaticSegment,
+    components::{Route, Router, Routes},
 };
 
 #[component]
@@ -18,9 +18,8 @@ pub fn App() -> impl IntoView {
     }
 }
 
+#[component]
 fn Home() -> impl IntoView {
-    let (value, set_value) = signal(0);
-
     view! {
         <div class="font-sans antialiased bg-lightgray min-h-screen text-text">
             <header::Header/>
