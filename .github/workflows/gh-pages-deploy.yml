@@ -33,6 +33,7 @@ jobs:
         uses: Swatinem/rust-cache@v2
 
       - name: Lint 📝
+        # Ensures code is formatted and passes clippy before building
         run: cargo clippy -- -D warnings && cargo fmt -- --check
 
       # Setup Node.js and cache npm packages
@@ -60,18 +61,11 @@ jobs:
         if: steps.cache-trunk.outputs.cache-hit != 'true'
         run: cargo install --locked trunk
 
-      # CRITICAL: Get the repo name to set the public URL
-      # This is needed for assets to load correctly on GitHub Pages
-      - name: Get repository name 🏷️
-        run: echo "REPO_NAME=$(echo '${{ github.repository }}' | cut -d'/' -f2)" >> $GITHUB_ENV
-
       - name: Build with Trunk 🛠️
-        # Use --public-url to prefix all asset paths with the repo name
-        run: trunk build --release --public-url /${{ env.REPO_NAME }}/
-
-      # This step is redundant for this workflow.
-      # - name: Setup Pages
-      #   uses: actions/configure-pages@v5
+        # CRITICAL FIXES:
+        # 1. --public-url / : Fixes the path doubling issue for User Pages (sorawit112.github.io)
+        # 2. --no-sri      : Fixes the "Failed to find a valid digest" blocking issue
+        run: trunk build --release --public-url / --no-sri
 
       - name: Upload artifact ⬆️
         uses: actions/upload-pages-artifact@v4
