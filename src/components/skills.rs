@@ -42,10 +42,7 @@ pub fn Skills() -> impl IntoView {
         "Elasticsearch, Kibana & Logstash",
         "ROS, ROS2",
     ];
-    let simualtion_skills = vec![
-        "Gazebo",
-        "Issac Sim, Isaac Lab, Isaac Gym",
-    ];
+    let simualtion_skills = vec!["Gazebo", "Issac Sim, Isaac Lab, Isaac Gym"];
     let soft_skills = vec![
         "Team Leadership",
         "R&D Collaboration",

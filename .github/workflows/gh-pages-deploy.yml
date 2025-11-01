@@ -43,10 +43,10 @@ jobs:
           cache: "npm" # Enable npm caching
 
       - name: Install Tailwind CSS 💨
-        run: npm install -D tailwindcss
+        run: npm install -D tailwindcss @tailwindcss/cli
 
       - name: Run Tailwind CSS 🏃
-        run: npx tailwindcss -i ./style/input.css -o ./style/output.css
+        run: npx @tailwindcss/cli -i ./style/input.css -o ./style/output.css
 
       # Cache the Trunk binary itself
       - name: Cache Trunk binary ⚡
